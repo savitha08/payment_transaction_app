@@ -16,5 +16,6 @@ docker run  -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 - Go to `packages/db`
     - npx prisma migrate dev
     - npx prisma db seed
+    -npx prisma studio  to see db
 - Go to `apps/user-app` , run `npm run dev`
 - Try logging in using phone - 1111111111 , password - alice (See `seed.ts`)

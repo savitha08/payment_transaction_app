@@ -7,6 +7,9 @@ app.use(express.json())
 app.post("/hdfcWebhook", async (req, res) => {
     //TODO: Add zod validation here?
     //TODO: HDFC bank should ideally send us a secret so we know this is sent by them
+    // check the token status processing or not in DB, if processing then only update the balance and mark it success. 
+    // This is to avoid duplicate webhook calls from the bank and also to make sure that the token is valid
+    console.log("Received webhook with body", req.body);
     const paymentInformation: {
         token: string;
         userId: string;
